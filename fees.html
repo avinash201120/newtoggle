@@ -5,6 +5,10 @@
   <title>RAZA Coaching – Fee Structure PDF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -14,39 +18,63 @@
 
     .container {
       max-width: 1000px;
-      margin: auto;
+      margin: 0 auto;
       padding: 20px;
+      text-align: center;
     }
 
     h1 {
-      text-align: center;
       font-size: 2rem;
       margin-bottom: 20px;
-      color: #003366;
     }
 
-    .pdf-wrapper {
+    .pdf-container {
+      position: relative;
       width: 100%;
-      height: 100vh;
-      border: 2px solid #003366;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding-bottom: 141.42%; /* A4 ratio */
+      height: 0;
       overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border: 2px solid #003366;
+      background: white;
+      display: none;
     }
 
-    iframe {
+    .pdf-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       border: none;
     }
 
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 1.5rem;
-      }
+    .mobile-message {
+      display: none;
+      background: #fff3cd;
+      color: #856404;
+      padding: 20px;
+      border: 1px solid #ffeeba;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
 
-      .pdf-wrapper {
-        height: 80vh;
+    .mobile-message a {
+      color: #003366;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    @media (min-width: 768px) {
+      .pdf-container {
+        display: block;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .mobile-message {
+        display: block;
       }
     }
   </style>
@@ -55,8 +83,16 @@
 
   <div class="container">
     <h1>RAZA Coaching Institute – Fee Structure 2025–26</h1>
-    <div class="pdf-wrapper">
-      <iframe src="images/FEE STRUCTURE 2025-26.pdf" title="RAZA Coaching Fee Structure PDF"></iframe>
+
+    <!-- Desktop & tablet: PDF Embed -->
+    <div class="pdf-container">
+      <iframe src="images/FEE STRUCTURE 2025-26.pdf" title="Fee Structure PDF" allowfullscreen></iframe>
+    </div>
+
+    <!-- Mobile: Download or View -->
+    <div class="mobile-message">
+      📄 PDF viewing is not supported on some mobile browsers. <br><br>
+      👉 <a href="images/FEE STRUCTURE 2025-26.pdf" target="_blank">Click here to view or download the Fee Structure PDF</a>
     </div>
   </div>
 
